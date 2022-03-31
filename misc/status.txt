@@ -1,0 +1,6 @@
+Brian Rhee
+
+I was initially going to install Kali on my personal computer, but I realized that my Mac's OS was not up to date and that
+I would need to install an OS update in order to get Kali up and running.
+Instead, I will try using the Olin lab computers to do my assignments, and if I find that to be too much of a hassle I will bite the bullet
+and update my OS and install Kali on my Mac.
