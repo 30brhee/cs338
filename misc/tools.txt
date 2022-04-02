@@ -1,1 +1,20 @@
+Brian Rhee
 
+1. ipconfig getifaddr en0
+(https://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line)
+2. host youtube.com
+(https://javarevisited.blogspot.com/2011/09/find-hostname-from-ip-address-to.html)
+3. nslookup 172.217.1.110
+(https://www.techtarget.com/searchnetworking/definition/nslookup#:~:text=nslookup%20is%20the%20name%20of,name%20system%20(DNS)%20record.)
+4. scp [options] username1@source_host:directory1/filename1 username2@destination_host:directory2/filename2
+(https://kb.iu.edu/d/agye)
+5. sudo nmap -p 80 youtube.com
+(https://www.digitalocean.com/community/tutorials/how-to-use-nmap-to-scan-for-open-ports)
+6. sudo netstat -tunlp
+(https://linuxize.com/post/check-listening-ports-linux/)
+7. curl https://www.carleton.edu/computer-science/ -o carletoncs.txt
+(https://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html)
+8. curl -I https://www.carleton.edu/computer-science/
+(https://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html)
+9. curl -v https://www.carleton.edu/computer-science/
+(https://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html)
