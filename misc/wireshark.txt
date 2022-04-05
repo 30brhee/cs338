@@ -1,3 +1,45 @@
 Brian Rhee
 
-1. 
+===== DAYTIME =====
+Question 1.
+
+1   172.16.64.129   129.6.15.28 	  TCP     52538 → 13 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3200835474 TSecr=0 WS=128
+2	 	129.6.15.28	    172.16.64.129	  TCP		  13 → 52538 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+3		172.16.64.129	  129.6.15.28	    TCP	54	52538 → 13 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Question 2.
+
+The client uses port 52538 for this interaction. The client needs a port in order to make sure that the transmitted and received data doesn't get cluttered with interference from processes on the same machine that are irrelevant to the port in question. 
+
+Question 3.
+
+4	  129.6.15.28	    172.16.64.129	  DAYTIME	  105	DAYTIME Response
+
+Question 4.
+
+Daytime: \n59674 22-04-05 01:58:01 50 0 0 792.1 UTC(NIST) * \n
+The first number in the content, 59674, is the Modified Julian Day (MJD). This is simply a way a recording time as the "number of days since midnight on November 17, 1858" (https://scienceworld.wolfram.com/astronomy/ModifiedJulianDate.html).
+
+The second number is the date in YY-MM-DD format (per the UTC timezone).
+
+The third number is the time in HH:MM:SS format (per the UTC timezone).
+
+The fourth and fifth numbers represent the Daylight Savings Time status (DST) and imminent Leap Seconds (LS). 
+
+The sixth number represents the health (H) of the time keeping system, which indicates how certain the server is of the current date and time.
+
+The final number accounts for the amount of time that the packet will take to travel from the daytime server to the client. Here, we can see that the server allows 792 milliseconds of time for the packet to travel from the daytime server to our client.
+
+
+
+Question 5. 
+
+Synchronize
+
+Question 6.
+
+Acknowledged
+
+Question 7. 
+
+Finish
