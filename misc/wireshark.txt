@@ -1,23 +1,21 @@
 Brian Rhee
 
 ===== DAYTIME =====
-Question 1.
 
+Question 1.
 1   172.16.64.129   129.6.15.28 	  TCP     52538 → 13 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3200835474 TSecr=0 WS=128
 2	 	129.6.15.28	    172.16.64.129	  TCP		  13 → 52538 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
 3		172.16.64.129	  129.6.15.28	    TCP	54	52538 → 13 [ACK] Seq=1 Ack=1 Win=64240 Len=0
 
 Question 2.
-
 The client uses port 52538 for this interaction. The client needs a port in order to make sure that the transmitted and received data doesn't get cluttered with interference from processes on the same machine that are irrelevant to the port in question. 
 
 Question 3.
-
 4	  129.6.15.28	    172.16.64.129	  DAYTIME	  105	DAYTIME Response
 
 Question 4.
-
 Daytime: \n59674 22-04-05 01:58:01 50 0 0 792.1 UTC(NIST) * \n
+
 The first number in the content, 59674, is the Modified Julian Day (MJD). This is simply a way a recording time as the "number of days since midnight on November 17, 1858" (https://scienceworld.wolfram.com/astronomy/ModifiedJulianDate.html).
 
 The second number is the date in YY-MM-DD format (per the UTC timezone).
@@ -30,16 +28,40 @@ The sixth number represents the health (H) of the time keeping system, which ind
 
 The final number accounts for the amount of time that the packet will take to travel from the daytime server to the client. Here, we can see that the server allows 792 milliseconds of time for the packet to travel from the daytime server to our client.
 
-
+The ending "UTC(NIST)" and following asterisk represent the timezone of the daytime information and the asterisk is simply included for formatting reasons.
 
 Question 5. 
-
 Synchronize
 
 Question 6.
-
 Acknowledged
 
 Question 7. 
-
 Finish
+
+Question 8.
+The client initiates the closing of the TCP connection. In the frame information of the first [FIN] flagged packet, the source is the client's IP address and the destination is the server's IP address.
+
+
+
+===== HTTP =====
+
+Question 1.
+30 TCP connections were opened. 
+
+Question 2.
+The homepage was requested in frame 7.
+The information from frame 7 is as follows:
+
+7	0.045098723	172.16.64.129	45.79.89.123	HTTP	395	GET /index.html HTTP/1.1 
+
+Because the frame information makes the request "GET /index.html", and also because the source is the client's IP address, we can see that the client is requesting the server for index.html.
+
+Question 3.
+Similarly to the previous question, frame 11 has the following information:
+11	0.151356742	172.16.64.129	45.79.89.123	HTTP	364	GET /jeff_square_head.jpg HTTP/1.1 
+
+Because the frame information makes the request "GET /jeff_square_head.jpg", we can see that the client is requesting the server for /jeff_square_head.jpg.
+
+===== QUESTIONS =====
+- I wasn't quite sure what the PSH flag indicated after a brief search on Google. Will this be important to us as we continue making use of wireshark and client/server connections?
