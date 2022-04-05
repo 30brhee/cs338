@@ -65,3 +65,5 @@ Because the frame information makes the request "GET /jeff_square_head.jpg", we 
 
 ===== QUESTIONS =====
 - I wasn't quite sure what the PSH flag indicated after a brief search on Google. Will this be important to us as we continue making use of wireshark and client/server connections?
+
+- Hot or cold beverages?
